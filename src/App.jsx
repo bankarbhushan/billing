@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -36,5 +37,24 @@ const App = () => {
     </Router>
   );
 };
+=======
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import From from "./components/From";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div className="flex justify-center gap-2">
+        <From />
+      </div>
+    </>
+  );
+}
+>>>>>>> 3f2a0338fe8e190cc65db8521e75b82db01a94f5
 
 export default App;
