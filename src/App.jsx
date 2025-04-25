@@ -18,20 +18,20 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route
-          path="/home"
+          path="/"
           element={
             // <ProtectedRoute>
             <Home />
             // </ProtectedRoute>
           }
         />
-        <Route path="/" element={<Dashbord />} />
+        {/* <Route path="/" element={<Dashbord />} />
         <Route path="/add-vegetable" element={<AddVegetable />} />
         <Route path="/add-vyapari" element={<AddVyapari />} />
         <Route path="/farmer-list" element={<FarmerList />} />
         <Route path="/vyapari-list" element={<VyapariList />} />
         <Route path="/vegetable-list" element={<VegetableList />} />
-        <Route path="/farmer-management" element={<FamerManagment />} />
+        <Route path="/farmer-management" element={<FamerManagment />} /> */}
       </Routes>
     </Router>
   );
