@@ -47,7 +47,14 @@ const Home = () => {
     <div class="p-4 border-2">
         ${printContent}
     </div>
+<div class="flex flex-col h-" >
+    <div class="bg-black  p-1 ">-</div>
+
+</div>
   
+    <div class="p-4 border-2">
+        ${printContent}
+    </div>
    
   </div>
         </body>
