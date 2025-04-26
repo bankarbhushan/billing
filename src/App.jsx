@@ -25,12 +25,13 @@ const App = () => {
             // </ProtectedRoute>
           }
         />
+        <Route path="/vegetable-list" element={<VegetableList />} />
+        {/* <Route path="/add-vegetable" element={<AddVegetable />} /> */}
+
         {/* <Route path="/" element={<Dashbord />} />
-        <Route path="/add-vegetable" element={<AddVegetable />} />
         <Route path="/add-vyapari" element={<AddVyapari />} />
         <Route path="/farmer-list" element={<FarmerList />} />
         <Route path="/vyapari-list" element={<VyapariList />} />
-        <Route path="/vegetable-list" element={<VegetableList />} />
         <Route path="/farmer-management" element={<FamerManagment />} /> */}
       </Routes>
     </Router>

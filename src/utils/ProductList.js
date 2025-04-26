@@ -19,7 +19,12 @@ const ProductList = [
     marathiName: "वांगी",
     hinglishName: "Vaangi",
   },
-  { id: 6, englishName: "Cabbage", marathiName: "कोबी", hinglishName: "Kobi" },
+  {
+    id: 6,
+    englishName: "Cabbage",
+    marathiName: "कोबी",
+    hinglishName: "banda Kobi",
+  },
   {
     id: 7,
     englishName: "Cauliflower",
@@ -100,7 +105,7 @@ const ProductList = [
     id: 23,
     englishName: "Green Chilli",
     marathiName: "हिरवी मिरची",
-    hinglishName: "Hirvi Mirchi",
+    hinglishName: "Mirchi",
   },
   {
     id: 24,
@@ -118,7 +123,7 @@ const ProductList = [
     id: 26,
     englishName: "Snake Gourd",
     marathiName: "पडवळ",
-    hinglishName: "Padwal",
+    hinglishName: "Parwal",
   },
   {
     id: 27,
@@ -132,12 +137,7 @@ const ProductList = [
     marathiName: "गवार",
     hinglishName: "Gawar",
   },
-  {
-    id: 29,
-    englishName: "French Beans",
-    marathiName: "फ्रेंच बीन",
-    hinglishName: "French Bean",
-  },
+
   {
     id: 30,
     englishName: "Raw Banana",
@@ -145,12 +145,7 @@ const ProductList = [
     hinglishName: "Kacche Kela",
   },
   { id: 31, englishName: "Yam", marathiName: "सुरण", hinglishName: "Suran" },
-  {
-    id: 32,
-    englishName: "Taro Root",
-    marathiName: "अळकुडी",
-    hinglishName: "Alkudi",
-  },
+
   {
     id: 33,
     englishName: "Turnip",
@@ -175,12 +170,7 @@ const ProductList = [
     marathiName: "झुकिनी",
     hinglishName: "Zucchini",
   },
-  {
-    id: 37,
-    englishName: "Celery",
-    marathiName: "अजमोदा",
-    hinglishName: "Ajmoda",
-  },
+
   {
     id: 38,
     englishName: "Leek",
@@ -193,24 +183,7 @@ const ProductList = [
     marathiName: "शेपू",
     hinglishName: "Shepu",
   },
-  {
-    id: 40,
-    englishName: "Amaranth",
-    marathiName: "तांदुळजा",
-    hinglishName: "Tandulja",
-  },
-  {
-    id: 41,
-    englishName: "Sorghum Leaves",
-    marathiName: "ज्वारीचे पान",
-    hinglishName: "Jwariche Paan",
-  },
-  {
-    id: 42,
-    englishName: "Mustard Leaves",
-    marathiName: "मोहरीची पाने",
-    hinglishName: "Moharichi Pane",
-  },
+
   {
     id: 43,
     englishName: "Curry Leaves",
@@ -242,12 +215,6 @@ const ProductList = [
     hinglishName: "Kairi",
   },
   {
-    id: 48,
-    englishName: "Green Tomato",
-    marathiName: "हिरवा टोमॅटो",
-    hinglishName: "Hirva Tomato",
-  },
-  {
     id: 49,
     englishName: "Raw Papaya",
     marathiName: "कच्चा पपई",
@@ -255,9 +222,174 @@ const ProductList = [
   },
   {
     id: 50,
-    englishName: "Turmeric Root",
-    marathiName: "हळद मूळ",
-    hinglishName: "Halad Mul",
+    englishName: "Amaranth Leaves",
+    marathiName: "पोकरा भाजी",
+    hinglishName: "Pokara Bhaji",
+  },
+  {
+    id: 51,
+    englishName: "Red Amaranth",
+    marathiName: "लाल भाजी",
+    hinglishName: "Lal Bhaji",
+  },
+  {
+    id: 52,
+    englishName: "Rajgira",
+    marathiName: "राजगिरा",
+    hinglishName: "Rajgira",
+  },
+  {
+    id: 53,
+    englishName: "Chawli Leaves",
+    marathiName: "चवळी भाजी",
+    hinglishName: "Chawadi Bhaji",
+  },
+  { id: 54, englishName: "Lemon", marathiName: "लिंबू", hinglishName: "Limbu" },
+  {
+    id: 55,
+    englishName: "Java Plum",
+    marathiName: "जांभूळ",
+    hinglishName: "Jambul",
+  },
+  {
+    id: 56,
+    englishName: "Custard Apple",
+    marathiName: "सीताफळ",
+    hinglishName: "Sitafal",
+  },
+  {
+    id: 57,
+    englishName: "Bullock's Heart",
+    marathiName: "रामफळ",
+    hinglishName: "Ramfal",
+  },
+  { id: 58, englishName: "Guava", marathiName: "पेरू", hinglishName: "Peru" },
+  { id: 59, englishName: "Jujube", marathiName: "बोर", hinglishName: "Bor" },
+  {
+    id: 60,
+    englishName: "Jackfruit",
+    marathiName: "फणस",
+    hinglishName: "Fanas",
+  },
+  {
+    id: 61,
+    englishName: "Field Beans",
+    marathiName: "वाल",
+    hinglishName: "Wal",
+  },
+  {
+    id: 62,
+    englishName: "Pigeon Pea",
+    marathiName: "तूर",
+    hinglishName: "Tur",
+  },
+  {
+    id: 63,
+    englishName: "Sliced Onion",
+    marathiName: "कांदा चोप",
+    hinglishName: "Kanda Chop",
+  },
+  {
+    id: 64,
+    englishName: "Ghor Bhaji",
+    marathiName: "घोर भाजी",
+    hinglishName: "Ghor Bhaji",
+  },
+  {
+    id: 65,
+    englishName: "Khel Bhaji",
+    marathiName: "खेल भाजी",
+    hinglishName: "Khel Bhaji",
+  },
+  {
+    id: 66,
+    englishName: "Khapar Khuti",
+    marathiName: "खापरखुटी",
+    hinglishName: "Khaprkhuti",
+  },
+  {
+    id: 67,
+    englishName: "Methi Bhaji",
+    marathiName: "मेथी भाजी",
+    hinglishName: "Methi Bhaji",
+  },
+  {
+    id: 68,
+    englishName: "Kakali",
+    marathiName: "ककली",
+    hinglishName: "Kakali",
+  },
+  {
+    id: 69,
+    englishName: "Dhemasa",
+    marathiName: "धेमासा",
+    hinglishName: "Dhemasa",
+  },
+  {
+    id: 70,
+    englishName: "Lawaki",
+    marathiName: "लावकी",
+    hinglishName: "Lawaki",
+  },
+  {
+    id: 71,
+    englishName: "Ash Gourd",
+    marathiName: "कोहळा",
+    hinglishName: "Kohala",
+  },
+  {
+    id: 72,
+    englishName: "Dhawali Bhaji",
+    marathiName: "धवळी भाजी",
+    hinglishName: "Dhawali Bhaji",
+  },
+  {
+    id: 73,
+    englishName: "Peanut",
+    marathiName: "शेंगदाणा",
+    hinglishName: "Mungfalli",
+  },
+  {
+    id: 74,
+    englishName: "Bengal Gram",
+    marathiName: "हरभरा",
+    hinglishName: "Chana",
+  },
+  {
+    id: 75,
+    englishName: "Sorrel Leaves",
+    marathiName: "अंबाडी",
+    hinglishName: "Ambadi",
+  },
+  {
+    id: 76,
+    englishName: "Kohlrabi",
+    marathiName: "नवलकोल",
+    hinglishName: "Navalkol",
+  },
+  {
+    id: 77,
+    englishName: "Radish",
+    marathiName: "मुळा",
+    hinglishName: "Mula",
+  },
+  {
+    id: 78,
+    englishName: "Green Peas",
+    marathiName: "वाटाणा",
+    hinglishName: "Vatana",
+  },
+  {
+    id: 79,
+    englishName: "Sambar (Dish)",
+    marathiName: "सांबार ",
+    hinglishName: "Sambar (Dish)",
+  },
+  {
+    id: 80,
+    englishName: "Tondaru",
+    marathiName: "टोण्डरू ",
+    hinglishName: "Tondaru",
   },
 ];
 

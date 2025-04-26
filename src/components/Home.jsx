@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProductList from "../utils/ProductList";
+
 const Home = () => {
   const [form, setForm] = useState({
     farmerName: "",
     date: "",
     day: "",
     vehicleCost: 10,
-    advance: 0 || 0,
-    otherFarmerCost: 0 || 0,
+    advance: 0,
+    otherFarmerCost: 0,
     phone: "",
   });
   const [editIndex, setEditIndex] = useState(null);
@@ -92,7 +94,7 @@ const Home = () => {
 
   const handleAddProduct = () => {
     if (!productInput.name || !productInput.weight || !productInput.rate) {
-      setError("सर्व उत्पाद माहिती आवश्यक आहे.");
+      setError("सर्व उत्पदानाची माहिती आवश्यक आहे.");
       return;
     }
 
@@ -224,8 +226,8 @@ const Home = () => {
               }
             >
               <option value="10">पट्टी - ₹10</option>
-              <option value="20">पट्टी - ₹50</option>
-              <option value="50">पट्टी -₹100</option>
+              <option value="0">पट्टी - ₹0</option>
+              <option value="50">पट्टी - ₹50</option>
               <option value="100">पट्टी -₹100</option>
               <option value="150">पट्टी -₹150</option>
               <option value="200">पट्टी -₹200</option>
@@ -246,7 +248,7 @@ const Home = () => {
             <input
               required
               type="number"
-              placeholder="इतर शेतकऱ्यांचे मालाचे पैसे"
+              placeholder="इतर शेतकऱ्यांचे घेतलेला मालाचे एकूण पैसे"
               className="input border px-3 py-2 rounded-md m-2 "
               onChange={(e) =>
                 setForm({ ...form, otherFarmerCost: e.target.value })
@@ -303,7 +305,7 @@ const Home = () => {
             {error && <p className="text-red-500 m-2">{error}</p>}
 
             <button
-              className="mt-3 bg-green-500 cursor-pointer text-white px-4 py-2 rounded"
+              className="mt-3 bg-green-500 cursor-pointer text-white font-semibold px-4 py-2 rounded"
               onClick={handleAddProduct}
             >
               Add Product
@@ -318,7 +320,7 @@ const Home = () => {
         >
           <div className="text-center mb-4">
             <h2 className="text-2xl font-bold">
-              🌿 माऊली भाजी भांडार, साकोली 🌿
+              🌿 माऊली सब्जी भांडार, साकोली 🌿
             </h2>
             <hr className="my-2 border-t border-gray-400 w-1/2 mx-auto" />
           </div>
@@ -388,6 +390,7 @@ const Home = () => {
                     });
                     setEditIndex(index); // Set the index of the product being edited
                   }}
+                  className="hover:bg-green-200 cursor-pointer"
                 >
                   <td className="p-2 border">{index + 1}</td>
                   <td className="p-2 border">{p.name}</td>
@@ -407,20 +410,29 @@ const Home = () => {
           <div className="mt-4 text-right font-bold text-lg space-y-1">
             <div>एकूण: ₹{grandTotal.toFixed(0)}</div>
             <div>
-              नगदी दिलेली रक्कम: ₹{parseFloat(form.advance || 0).toFixed(0)}
+              नगदी दिलेली रक्कम (-): ₹{parseFloat(form.advance || 0).toFixed(0)}
             </div>
-            <div>पट्टी: ₹{parseFloat(form.vehicleCost || 0).toFixed(0)}</div>
             <div>
-              खरेदी माल: ₹{parseFloat(form.otherFarmerCost || 0).toFixed(0)}
+              पट्टी (-): ₹{parseFloat(form.vehicleCost || 0).toFixed(0)}
             </div>
-            <div className="border-t pt-2">
-              💰 अंतिम रक्कम: ₹{netTotal.toFixed(0)}
+            <div>
+              इतर शेतकऱ्यांचे घेतलेला मालाचे एकूण पैसे(-): ₹
+              {parseFloat(form.otherFarmerCost || 0).toFixed(0)}
+            </div>
+            <div className="border-t font-extrabold text-2xl pt-2">
+              💰 अंतिम रक्कम: ₹ {netTotal.toFixed(0)}
             </div>
           </div>
         </div>
 
-        {/* Burron section */}
+        {/* Button section */}
         <div className="text-center  flex gap-4 items-center justify-end-safe mt-4">
+          <a href="/vegetable-list" target="_blank" rel="noopener noreferrer">
+            <button className="bg-purple-500 text-white px-6 py-2 cursor-pointer rounded shadow hover:bg-purp-600">
+              भाजीपाला यादी
+            </button>
+          </a>
+
           <button
             onClick={handlePrint}
             className="bg-blue-500 text-white px-6 py-2 cursor-pointer rounded shadow hover:bg-blue-600"
