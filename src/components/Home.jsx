@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ProductList from "../utils/ProductList";
 
 const Home = () => {
@@ -49,12 +48,7 @@ const Home = () => {
         ${printContent}
     </div>
   
-    <!-- Vertical Dotted Line -->
-    <div class="border-l-2 p-2 border-dashed border-black h-full"></div>
-  
-    <div class="p-4 border-2">
-        ${printContent}
-    </div>
+   
   </div>
         </body>
       </html>
@@ -148,11 +142,22 @@ const Home = () => {
     setProductInput({ name: "", weight: "", rate: "" }); // Reset input fields
   };
 
-  const grandTotal = products.reduce((sum, p) => sum + p.total, 0);
+  // const grandTotal = products.reduce((sum, p) => sum + p.total, 0);
+  // const sum = products.reduce((sum, p) => total + p, 0);
+  // const totalDeduction =
+  //   parseFloat(form.advance) +
+  //   parseFloat(form.otherFarmerCost) +
+  //   parseFloat(form.vehicleCost);
+  // const netTotal = grandTotal - totalDeduction;
+
+  const grandTotal = products.reduce((sum, p) => sum + p.total, 0); // total (already present)
+  const rateKgSum = products.reduce((sum, p) => sum + p.rate * p.weight, 0); // New sum
+  const totalCommision = products.reduce((sum, p) => sum + p.commission, 0);
   const totalDeduction =
-    parseFloat(form.advance) +
-    parseFloat(form.otherFarmerCost) +
-    parseFloat(form.vehicleCost);
+    parseFloat(form.advance || 0) +
+    parseFloat(form.otherFarmerCost || 0) +
+    parseFloat(form.vehicleCost || 0);
+
   const netTotal = grandTotal - totalDeduction;
 
   return (
@@ -355,7 +360,7 @@ const Home = () => {
           {/* मालक माहिती */}
           <div className="text-[16px] font-semibold px-4">
             <p>
-              <span className="inline-block w-36">👨‍💼 मालक नाव:</span> येगोश
+              <span className="inline-block w-36">👨‍💼 मालक नाव:</span> योगेश
               गोटेफोडे
             </p>
             <p>
@@ -372,6 +377,7 @@ const Home = () => {
                 <th className="p-2 border">भाजी</th>
                 <th className="p-2 border">वजन (kg)</th>
                 <th className="p-2 border">दर (₹/kg)</th>
+                <th className="p-2 border">(वजन * दर) </th>
                 {userType === "farmer" ? (
                   <th className="p-2 border">कमिशन (8%)</th>
                 ) : null}
@@ -396,6 +402,7 @@ const Home = () => {
                   <td className="p-2 border">{p.name}</td>
                   <td className="p-2 border">{p.weight}</td>
                   <td className="p-2 border">{p.rate}</td>
+                  <td className="p-2 border">{p.weight * p.rate}</td>
                   {userType === "farmer" ? (
                     <td className="p-2 border" id="commission">
                       ₹{p.commission.toFixed(0)}
@@ -408,12 +415,15 @@ const Home = () => {
           </table>
 
           <div className="mt-4 text-right font-bold text-lg space-y-1">
+            <div>एकूण (वजन * दर) : ₹{rateKgSum.toFixed(0)}</div>
+            <div>एकूण कमिशन (8%) : ₹{totalCommision.toFixed(0)}</div>
             <div>एकूण: ₹{grandTotal.toFixed(0)}</div>
-            <div>
-              नगदी दिलेली रक्कम (-): ₹{parseFloat(form.advance || 0).toFixed(0)}
-            </div>
+
             <div>
               पट्टी (-): ₹{parseFloat(form.vehicleCost || 0).toFixed(0)}
+            </div>
+            <div>
+              नगदी दिलेली रक्कम (-): ₹{parseFloat(form.advance || 0).toFixed(0)}
             </div>
             <div>
               इतर शेतकऱ्यांचे घेतलेला मालाचे एकूण पैसे(-): ₹
