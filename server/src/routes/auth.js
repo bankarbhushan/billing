@@ -2,7 +2,7 @@ const express = require("express");
 const { validateData, validateForgotPassword } = require("./utils/validation");
 const User = require("./model/User");
 const authRouter = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 authRouter.post("/signup", async (req, res) => {
   try {
