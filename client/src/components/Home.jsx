@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductList from "../utils/ProductList";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const Home = () => {
   const [form, setForm] = useState({
@@ -155,10 +156,7 @@ const Home = () => {
 
   return (
     <div className=" bg-gray-100 min-h-screen  relative">
-      <div className="bg-green-700 fixed top-0 z-10 w-[100vw] text-white p-5 shadow-md text-center text-2xl font-bold tracking-wide">
-        🌿 माऊली Bill System 🌿
-      </div>
-
+      <Header />
       <div className="p-6 mt-20">
         {/* Two section */}
         <div className="grid md:grid-cols-2 gap-4">

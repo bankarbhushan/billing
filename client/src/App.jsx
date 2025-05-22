@@ -10,6 +10,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import RefundCancellationPolicy from "./pages/RefundCancellationPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUs";
+import ProductForm from "./components/Product/ProductForm";
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
         <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
         <Route path="/privacypolicy" element={<PrivacyPolicy />}></Route>
         <Route path="/contactus" element={<ContactUs />}></Route>
+        <Route path="/productList" element={<ProductForm />}></Route>
+
         <Route
           path="/termsandconditions"
           element={<TermsAndConditions />}
